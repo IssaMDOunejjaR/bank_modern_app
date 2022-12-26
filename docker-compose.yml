@@ -5,6 +5,8 @@ services:
     image: custom-node-alpine
     volumes:
       - ./:/var/www/
+    networks:
+      - homelab
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.bank_client.rule=Host(`bank-modern.issamounejjar.live`)"
